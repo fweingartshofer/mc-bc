@@ -1,0 +1,16 @@
+= Microblockchain
+Florian Weingartshofer
+:source-highlighter: rouge
+:author: Florian Weingartshofer
+:rouge-style: github
+
+== Setup
+The application is built using Javalin, Java and Gradle.
+
+== Running the Application
+[source,bash]
+----
+./gradlew run
+----
+
+The swagger-ui should be available at http://localhost:5000/swagger.
