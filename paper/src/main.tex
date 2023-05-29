@@ -1,0 +1,43 @@
+%! Author = florian
+%! Date = 25.05.23
+
+% Preamble
+\documentclass[conference]{IEEEtran}
+
+% Packages
+\usepackage{amsmath}
+\usepackage[english]{babel}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{libertine}
+\usepackage{libertinust1math}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{color}
+\usepackage[utf8]{inputenc} % To be able to write ⌀ in the first place
+
+\title{Eco-Friendly Blockchains}
+
+\author{\IEEEauthorblockN{Florian Weingartshofer}}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Document
+\begin{document}
+    \maketitle
+
+    \selectlanguage{english}
+
+    \input{sections/00_abstract}
+    \input{sections/01_introduction}
+    \input{sections/02_alternative_proof_algorithms}
+    \input{sections/03_alternative_blockchains}
+    \input{sections/04_conclusion}
+
+    \bibliography{main}
+    \bibliographystyle{plain}
+\end{document}
