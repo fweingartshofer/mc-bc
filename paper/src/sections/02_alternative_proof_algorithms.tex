@@ -1,12 +1,51 @@
 %! Author = florian
 %! Date = 25.05.23
 
+
 \section{Alternative Consensus Mechanisms}\label{sec:alternative-consensus-mechanisms}
 This section will describe and compare alternative consensus mechanisms.
-Around 60\% of the current consensus mechanisms used in blockchains is Proof-of-Work.\cite{overview-of-sustainablity-blockchains}
+Around 60\% of the current consensus mechanisms used in blockchains is the POW(Proof-of-Work) consensus mechanism.
+As already described in section\ \ref{sec:introduction}, the POW consensus mechanisms requires a miner to solve complex mathematical puzzles in order to create block on the blockchain.
+This requires much energy and is therefore bad for the environment.\cite{overview-of-sustainablity-blockchains,moralis-pow-enery-consumption}
 
 By moving to an alternative proof algorithm blockchains could reduce their energy consumption.
 This section will describe these alternative consensus mechanisms.\cite{4-ways-to-counter-blockchains-energy-consumption}
 
 \subsection{Proof of Stake}\label{subsec:proof-of-stake}
+Proof-of-Stake is the second most used consensus algorithm, next to Proof-of-Work.
+Unlike Proof-of-Work, the Proof-of-Stake consensus algorithm does not need miners to create blocks for the blockchain.
+Instead, participants, who want to create blocks, have to place a certain amount of the networks tokens as a stake.
+These participants are known as validators.
+The coins in a stake are locked and cannot be used for transactions.
+If a validator wants to access the tokens in their stake, they have to stop being a validator in order to do so.
+The amount of blocks they can create is limited by the size of the placed stake.
+The creator of a blocks gets the transaction fees associated with the transactions in the block, but no mining reward.\cite{bitpanda-pos}
+
+The nature of Proof-of-Stake is therefore a deterministic algorithm, since the creator of the block is selected by the size their stake.
+This can lead to unwanted centralization, since a participant with many tokens has an advantage over participants with only a small amount of tokens.
+To prevent the centralization of the network, there are other selection methods, such as:
+
+\begin{itemize}
+    \item\textbf{Stationary Time}: Validators are selected based on the amount of time their cryptocurrency has been locked up in the network.\cite{bitpanda-pos}
+    \item\textbf{Coin age}: Validators are selected based on the product of their stake and the amount of time the tokens have been held in the network.\cite{bitflyer-glossary}
+    \item\textbf{Randomized Block Selection}: Validators are selected based on a pseudorandom function that combines their stake with other factors such as the hash of the previous block.\cite{cryptonews-pos}
+\end{itemize}
+
+\subsection{Proof of Time and Space}\label{subsec:proof-of-time-and-space}
+Another alternative consensus mechanism is Proof-of-Space-and-Time(PoST).
+It requires participants to use storage space to validate transactions.
+It is supposed to be more energy efficient and egalitarian than Proof-of-Work and Proof-of-Stake.
+
+The greater the amount of storage space allocated by a node operator on their hard drive, the increased likelihood of finding a matching hash value from a predetermined list.
+This, in turn, enhances their chances of winning the mining reward.
+This requires large amount of free space on a hard-drive, but does not need much energy to create new blocks.
+
+In more details, Proof-of-Space-and-Time consists of two different consensus mechanisms, that are combined.
+First, Proof-of-Space, this is the reserved hard-drive space for mining blocks.
+Second, Proof-of-Time, this requires a small delay between block validation using a verifiable delay function.
+This delay is to stop miners from getting additional rewards when mining with multiple machines in parallel on one node.
+It is still possible for miners to run multiple nodes.\cite{supraoracles-post}
+
+
+\subsection{Proof-of-Authority}\label{subsec:proof-of-authority}
 
