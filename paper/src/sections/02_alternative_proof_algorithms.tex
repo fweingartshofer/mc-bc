@@ -27,14 +27,14 @@ To prevent the centralization of the network, there are other selection methods,
 
 \begin{itemize}
     \item\textbf{Stationary Time}: Validators are selected based on the amount of time their cryptocurrency has been locked up in the network.\cite{bitpanda-pos}
-    \item\textbf{Coin age}: Validators are selected based on the product of their stake and the amount of time the tokens have been held in the network.\cite{bitflyer-glossary}
+    \item\textbf{Coin Age}: Validators are selected based on the product of their stake and the amount of time the tokens have been held in the network.\cite{bitflyer-glossary}
     \item\textbf{Randomized Block Selection}: Validators are selected based on a pseudorandom function that combines their stake with other factors such as the hash of the previous block.\cite{cryptonews-pos}
 \end{itemize}
 
 \subsection{Proof of Time and Space}\label{subsec:proof-of-time-and-space}
 Another alternative consensus mechanism is Proof-of-Space-and-Time(PoST).
 It requires participants to use storage space to validate transactions.
-It is supposed to be more energy efficient and egalitarian than Proof-of-Work and Proof-of-Stake.
+It is supposed to be more energy efficient than Proof-of-Work and Proof-of-Stake.
 
 The greater the amount of storage space allocated by a node operator on their hard drive, the increased likelihood of finding a matching hash value from a predetermined list.
 This, in turn, enhances their chances of winning the mining reward.
@@ -46,6 +46,44 @@ Second, Proof-of-Time, this requires a small delay between block validation usin
 This delay is to stop miners from getting additional rewards when mining with multiple machines in parallel on one node.
 It is still possible for miners to run multiple nodes.\cite{supraoracles-post}
 
+\subsubsection{Pros and Cons of Proof of Space and Time}
+As already mentioned PoST is more energy efficient as it uses unused storage space rather than computation.
+The hardware requirements to run a validator node is also lower, as it only requires free storage space.
 
-\subsection{Proof-of-Authority}\label{subsec:proof-of-authority}
+One major disadvantage of PoSt its increased wear on HDDs and SSDs.
+It can reduce the shelf life of a hard drive to only 40 days rather than the usual shelf life of a decade.
+This also means, while PoST itself requires less energy, it may not be an eco-friendly solution, since validators will have to buy new hard drives more frequently and produce more waste.
+Compared to the lifespan of a gpu that is used to mine cryptocurrencies, which is about three to five years, this is way less.
+So while being more energy efficient, PoST is definitely not better for the environment.\cite{euronews-chia, devicetest-gpu-lifespan, supraoracles-post}
+
+\subsection{Proof of Authority}\label{subsec:proof-of-authority}
+The Proof-of-Authority consensus mechanism is very different to the other consensus algorithms already described in this section.
+It is suitable for private blockchains.
+In Proof-of-Authority not everybody can be a validator.
+The validators are preselected based on their reputation, instead of using a stake or time and space.
+To become a validator, the candidates identity has to be checked, and the candidate has to be willing to stake money and/or their reputation.
+Usually, there should be a rigorous selection process to filter out questionable candidates.\cite{coindesk-poa}
+
+\subsubsection{Pros and Cons of Proof of Authority}
+There are multiple pros and cons on Proof-of-Authority.
+An advantage of a blockchain based on Proof-of-Authority is that it can execute more transactions per second by not having to calculate a Proof-of-Work everytime a validator builds a block.
+Blockchains using Proof-of-Authority are also better secured against 51\% attacks, since the validators are all highly vetted.
+Validators also do not need special hardware to build blocks compared to Proof-of-Work or Proof-of-Time-and-Space as mentioned in\ \ref{subsec:proof-of-time-and-space}.
+
+A disadvantage would be the centralization of the blockchain, by having to check and identify each potential validator not every participant in the blockchain can become one.
+Therefore, the blockchain loses the aspect of being decentralized as being show in figure\ \ref{fig:centralization-of-proof-of-authority}.
+One key aspect of blockchains is their immutability.
+This makes blockchains resilient to censorship and the blockchain is available to everyone.
+By centralizing the validators the blockchain loses these abilities.
+It is easier to block a specific participant  or manipulate the blockchain if the validators wish to do so.
+
+Since the validator nodes are publicly known they are vulnerable to manipulation themselves.
+An outside actor could try to influence validators to act in a dishonest or destructive way.\cite{insidecrypto-poa,coindesk-poa}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{img/proof-of-authority-0}
+    \caption{Centralization of Proof of Authority}
+    \label{fig:centralization-of-proof-of-authority}
+\end{figure}
 

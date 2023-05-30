@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+skinparam actorStyle awesome
+
+cloud Validators as v
+
+v -left-> :Participant 1:
+v -right-> :Participant 2:
+v -up-> :Participant 3:
+v -down-> :Participant 4:
+
+@enduml
