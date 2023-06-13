@@ -21,6 +21,10 @@ If a validator wants to access the tokens in their stake, they have to stop bein
 The amount of blocks they can create is limited by the size of the placed stake.
 The creator of a blocks gets the transaction fees associated with the transactions in the block, but no mining reward.\cite{bitpanda-pos}
 
+Another aspect of proof of stake is the penalty mechanism.
+If a participant acts malicious or is, for example, offline they can get their stake slashed.
+This means that the tokens that were staked are removed from the participants account.\cite{bitpanda-pos}
+
 The nature of proof of stake is therefore a deterministic algorithm, since the creator of the block is selected by the size their stake.
 This can lead to unwanted centralization, since a participant with many tokens has an advantage over participants with only a small amount of tokens.
 To prevent the centralization of the network, there are other selection methods, such as:
@@ -30,6 +34,22 @@ To prevent the centralization of the network, there are other selection methods,
     \item\textbf{Coin Age}: Validators are selected based on the product of their stake and the amount of time the tokens have been held in the network.\cite{bitflyer-glossary}
     \item\textbf{Randomized Block Selection}: Validators are selected based on a pseudorandom function that combines their stake with other factors such as the hash of the previous block.\cite{cryptonews-pos}
 \end{itemize}
+
+\subsubsection{Pros and Cons of Proof of Stake}
+As already mentioned proof of stake is more energy efficient, since nothing is actually calculated.
+It also provides better throughput than proof of work and a lower entry barrier, because no special hardware is required to mine blocks.
+One interesting aspect of proof of stake is, that it reduces centralization against mining farms, since more nodes can participate.
+In that sense it reduces centralization.\cite{bitpanda-pos}
+
+On the other hand proof of stake enables centralization, since validators with a higher stake have an advantage over participants with a lesser stake.
+Proof of stake is also not as proven as proof of work.
+If it is a viable alternative solution has to be shown.\cite{insider-pos-vs-pow}
+
+One problem of proof of stake the nothing at stake problem.
+If creating blocks, does not actually require doing anything, like in proof of work, participants could just create multiple parallel chains.
+So stakers just create multiple parallel blocks in order to get the transaction fees.
+The solution to this problem is penalizing participants who create multiple parallel blocks.
+
 
 \subsection{Proof of Capacity}\label{subsec:proof-of-capacity}
 Proof of capacity is a consensus mechanism, that does not use CPUs or GPUs to create blocks, but empty storage space.
