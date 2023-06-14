@@ -7,6 +7,45 @@ Ethereum should be mentioned as a blockchain that moved from a proof of work con
 Ethereum was able to reduce its power consumption by 99.99\% after migrating to a proof of stake based consensus mechanism according to the Cambridge Blockchain Sustainability Index.\cite{CBECI}
 
 \subsection{The Chia Network}\label{subsec:chia}
+The Chia Network and its native token called XCH are an alternative blockchain that try to be an eco-friendly alternative to BitCoin.
+The blockchain use proof of space and time as consensus mechanism, which is described more in depth in subsection\ \ref{subsec:proof-of-space-and-time}.
+The Chia network is a permissionless longest-chain blockchain, similar to the BitCoin blockchain.\cite{chia-whitepaper,chia-greenpaper}
+
+\subsubsection{Coin Set Model}
+Chia uses an unspent transaction output model, also called coin set model, similar to bitcoins.
+Coins are first class objects and transactions destroy coins and create new ones.
+Each coin is locked with a smart contract or also called a puzzle.
+The puzzle is then hashed, which in turn can be converted to an address.
+The id of a coin is the id of the parent coin, the puzzle hash and the amount of the coin.
+In order to spend a coin the original puzzle must be provided as well as its solution.
+
+Announcements are another feature of Chias coins.
+An announcement requires coins to be spent together in the same transaction.
+
+\subsubsection{Security and Attacks}
+There are multiple security problems, when using a consensus mechanism that does not actually require work to be done.
+The Chia Network defines three types of attacks against costless consensus mechanisms:
+
+The first one is called grinding.
+Grinding means that an attacker tries to  mine different blocks for different payloads until they get a good block, in other words they try to find a block that matches a plot on their mining rig.
+Chias solution to this problem is to split the blockchain into two parts the trunk and the foliage, the grindable part(transactions and timestamp) is in the foliage, so an attcker is not able to grind a block in the trunk.
+The trunk contains the canonical proofs and the challenge is based only on blocks in the trunk.
+The challenge is the hash that has to be found in a plot on a hard drive.
+
+Another security issue is double-dipping.
+An attacker can create a block-tree by forking at each level in private to overtake the honest chain in the Chia Network.
+The probability of overtaking the honest chain is exponentially small in the depth of each path, and there is also an exponential number of paths.
+Therefore, it is difficult to determine how much of an advantage this strategy gives.
+The solution to this problem is correlated randomness, which means only every \texttt{k}th block is used to generate challenges.
+
+The last attack vector is called bootstrapping or costless simulation.
+Here an attacker can create their own forked chain at basically no cost.
+This attack can be used for short range attacks like selfish mining.
+The solution to this attack is the verifiable delay function, which is described in subsection\ \ref{subsec:proof-of-space-and-time}.
+By having a time delay the attacker has to invest time to build their own fork.\cite{chia-greenpaper}
+
+These are the attacks that the Chia Network tries to prevent by using the proof of space and time algorithm.
+
 
 \subsection{The Energy Web Chain}\label{subsec:the-energy-web-chain}
 The Energy Web Chain is a blockchain based virtual machine with the energy sector as target audience.
