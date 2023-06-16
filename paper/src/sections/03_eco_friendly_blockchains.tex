@@ -2,75 +2,75 @@
 %! Date = 29.05.23
 
 \section{Eco-Friendly Blockchains}\label{sec:alternative-blockchains}
-This section will describe two alternative blockchains, which claim to be eco-friendly.
-Ethereum should be mentioned as a blockchain that moved from a proof of work consensus mechanism to a proof of stake consensus mechanism, which is described in subsection\ \ref{subsec:proof-of-stake}.
-Ethereum was able to reduce its power consumption by 99.99\% after migrating to a proof of stake based consensus mechanism according to the Cambridge Blockchain Sustainability Index.\cite{CBECI}
+This section will describe two alternative blockchains that claim to be eco-friendly.
+It is important to note that not all blockchains claiming to be eco-friendly will be discussed in this section.
+One of the blockchains that will not be further discussed is Ethereum, because there already many articles detailing how it is eco-friendly.
+Ethereum transitioned from a proof-of-work consensus mechanism to a proof-of-stake consensus mechanism, as described in Subsection~\ref{subsec:proof-of-stake}.
+Following the migration to a proof-of-stake-based consensus mechanism, Ethereum was able to achieve a 99.99\% reduction in power consumption, according to the Cambridge Blockchain Sustainability Index~\cite{CBECI}.
+
 
 \subsection{The Chia Network}\label{subsec:chia}
-The Chia Network and its native token called XCH are an alternative blockchain that try to be an eco-friendly alternative to BitCoin.
-The blockchain use proof of space and time as consensus mechanism, which is described more in depth in subsection\ \ref{subsec:proof-of-space-and-time}.
-The Chia network is a permissionless longest-chain blockchain, similar to the BitCoin blockchain.\cite{chia-whitepaper,chia-greenpaper}
+The Chia Network, along with its native token called XCH, is an alternative blockchain that aims to be an eco-friendly alternative to Bitcoin.
+The blockchain utilizes the proof-of-space-and-time consensus mechanism, which is described in more depth in Subsection~\ref{subsec:proof-of-space-and-time}.
+The Chia Network operates as a permissionless longest-chain blockchain, similar to the Bitcoin blockchain~\cite{chia-whitepaper,chia-greenpaper}.
 
 \subsubsection{Coin Set Model}
-Chia uses an unspent transaction output model, also called coin set model, similar to bitcoins.
-Coins are first class objects and transactions destroy coins and create new ones.
-Each coin is locked with a smart contract or also called a puzzle.
+Chia employs an unspent transaction output model, also known as the coin set model, similar to Bitcoin.
+In this model, coins are treated as first-class objects, and transactions destroy existing coins while creating new ones.
+Each coin is locked with a smart contract, also referred to as a puzzle.
 The puzzle is then hashed, which in turn can be converted to an address.
 The id of a coin is the id of the parent coin, the puzzle hash and the amount of the coin.
 In order to spend a coin the original puzzle must be provided as well as its solution.
 
-Announcements are another feature of Chias coins.
-An announcement requires coins to be spent together in the same transaction.
+Chia introduces the concept of announcements, which require coins to be spent together in the same transaction.
 
 \subsubsection{Security and Attacks}
-There are multiple security problems, when using a consensus mechanism that does not actually require work to be done.
-The Chia Network defines three types of attacks against costless consensus mechanisms:
+When utilizing a consensus mechanism that does not require actual work, several security concerns arise.
+The Chia Network identifies three types of attacks against costless consensus mechanisms:
 
-The first one is called grinding.
-Grinding means that an attacker tries to  mine different blocks for different payloads until they get a good block, in other words they try to find a block that matches a plot on their mining rig.
-Chias solution to this problem is to split the blockchain into two parts the trunk and the foliage, the grindable part(transactions and timestamp) is in the foliage, so an attcker is not able to grind a block in the trunk.
-The trunk contains the canonical proofs and the challenge is based only on blocks in the trunk.
-The challenge is the hash that has to be found in a plot on a hard drive.
+The first attack is known as grinding.
+In this attack, an attacker attempts to mine different blocks with different payloads until they find a favorable block that matches a plot on their mining rig.
+Chia addresses this issue by dividing the blockchain into two parts: the trunk and the foliage.
+The grindable part, which includes transactions and timestamps, is located in the foliage, preventing an attacker from grinding a block in the trunk.
+The trunk contains canonical proofs, and the challenge is solely based on blocks in the trunk.
+The challenge refers to the hash that needs to be found in a plot on a hard drive.
 
-Another security issue is double-dipping.
-An attacker can create a block-tree by forking at each level in private to overtake the honest chain in the Chia Network.
-The probability of overtaking the honest chain is exponentially small in the depth of each path, and there is also an exponential number of paths.
-Therefore, it is difficult to determine how much of an advantage this strategy gives.
-The solution to this problem is correlated randomness, which means only every \texttt{k}th block is used to generate challenges.
+Another security concern is double-dipping, where an attacker creates a block-tree by forking at each level in private to overtake the honest chain in the Chia Network.
+The probability of overtaking the honest chain diminishes exponentially with each level, and there is an exponential number of paths, making it difficult to determine the advantage gained through this strategy.
+The solution to this problem is correlated randomness, where only every \texttt{k}th block is used to generate challenges.
 
 The last attack vector is called bootstrapping or costless simulation.
-Here an attacker can create their own forked chain at basically no cost.
-This attack can be used for short range attacks like selfish mining.
-The solution to this attack is the verifiable delay function, which is described in subsection\ \ref{subsec:proof-of-space-and-time}.
-By having a time delay the attacker has to invest time to build their own fork.\cite{chia-greenpaper}
+In this attack, an attacker can create their own forked chain at minimal cost.
+This attack can be utilized for short-range attacks such as selfish mining.
+The solution to this attack is the use of a verifiable delay function, as described in Subsection~\ref{subsec:proof-of-space-and-time}.
+By introducing a time delay, the attacker must invest time to build their own fork~\cite{chia-greenpaper}.
 
-These are the attacks that the Chia Network tries to prevent by using the proof of space and time algorithm.
+These are the attacks that the Chia Network aims to prevent by utilizing the proof-of-space-and-time algorithm.
 
 
 \subsection{The Energy Web Chain}\label{subsec:the-energy-web-chain}
-The Energy Web Chain is a blockchain based virtual machine with the energy sector as target audience.
-The organisation developing the energy web chain is called Energy Web.
-Per the Energy Web website: ``Energy Web is a global non-profit on a mission to accelerate the energy transition by developing and deploying open-source Web3 technologies that help companies unlock business value from clean and distributed energy resources.''\footnote{\url{https://www.energyweb.org/why-we-exist/} last accessed on 2023-06-13}.
-What the energy transition actually consists of is not mentioned.
-The Energy Web Chain is compatible with the Ethereum virtual machine and ERC20 tokens.
-The blockchain uses proof of authority as consensus mechanism, which is described in subsection\ \ref{subsec:proof-of-authority}.
-Every validator gets Energy Web Tokens for creating blocks as an incentive to stay honest.\cite{kraken-ewc}
+The Energy Web Chain is a blockchain-based virtual machine targeted at the energy sector.
+The organization responsible for developing the Energy Web Chain is called Energy Web.
+According to the Energy Web website, ``Energy Web is a global non-profit on a mission to accelerate the energy transition by developing and deploying open-source Web3 technologies that help companies unlock business value from clean and distributed energy resources''~\cite{kraken-ewc}.
+However, the specific details of the energy transition are not mentioned.
+The Energy Web Chain is compatible with the Ethereum virtual machine and supports ERC20 tokens.
+The blockchain utilizes proof of authority as its consensus mechanism, which is described in Subsection~\ref{subsec:proof-of-authority}.
+Validators receive Energy Web Tokens as an incentive for creating blocks, encouraging honest behavior.
 
-There are multiple use cases that Energy Web wants the Energy Web Chain for.
-Apart for hosting other tokens that are related to the energy sector, one of the being SolarCoin\ \ref{subsubsec:solarcoin}, they want to provide a number of different solutions.
+The Energy Web Chain has multiple use cases envisioned by Energy Web.
+In addition to hosting other tokens related to the energy sector, such as SolarCoin (discussed in Subsubsection~\ref{subsubsec:solarcoin}), they aim to provide various solutions.
 
-One interesting solution is called Green Proofs.
-Green Proofs try to solve the problem of trusting ESG reports and sustainability claims without verifying these claims.
-ESG reporting is a type of corporate disclosure regarding environmental, social and governance(ESG) efforts and claims.
-Often investors want an ESG report to make decisions.
-It is often used for branding, since customers choose to do business with corporations that align with their values.
-Furthermore, ESG reports are often required by regulators in order to see if an organisation is compliant with regulations.
-Energy Web Green Proofs is a solution to track low-carbon products throughout supply chains.
-Users are then able to verify ESG reports without having to trust them.\cite{ESG-reporting, EW-green-proofs}
+One notable solution is called Green Proofs.
+Green Proofs address the challenge of trusting ESG reports and sustainability claims without independently verifying them.
+ESG reporting involves corporate disclosure regarding environmental, social, and governance (ESG) efforts and claims.
+Investors often rely on ESG reports to inform their decision-making, and customers tend to prefer businesses aligned with their values.
+Additionally, regulatory compliance often necessitates ESG reporting.
+Energy Web Green Proofs offer a solution for tracking low-carbon products throughout supply chains.
+Users can verify ESG reports without having to rely solely on trust~\cite{ESG-reporting, EW-green-proofs}.
 
 \subsubsection{SolarCoin}\label{subsubsec:solarcoin}
-One token that is based on the Energy Web Chain is the SolarCoin.
-It uses proof of generation as consensus mechanism, which is a consensus mechanism based on proof of authority, since it requires a central authority to verify that something was actually generated.
-In the case of SolarCoin the proof of generation is the number of generated MWh-
+One token built on the Energy Web Chain is SolarCoin.
+SolarCoin employs proof-of-generation as its consensus mechanism, which is based on proof of authority since it requires a central authority to verify the actual generation.
+In the case of SolarCoin, the proof of generation is determined by the number of megawatt-hours (MWh) generated.
 For every MWh generated by a photovoltaic system the producer gets one SolarCoin.
-It is essentially a cryptocurrency that is backed by solar energy.\cite{solarcoin-save-the-planet}
+SolarCoin essentially functions as a cryptocurrency backed by solar energy~\cite{solarcoin-save-the-planet}.
